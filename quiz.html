@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>DRE Transformation Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+
+
+    <style>
+        /* --- CSS STYLES --- */
+        #quiz-container {
+            font-family: Arial, sans-serif;
+            max-width: 750px;
+            margin: 30px auto;
+            padding: 25px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .question-card {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #fff;
+            border: 1px solid #eee;
+        }
+
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .answer-option {
+            display: block;
+            margin: 8px 0;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .answer-option:hover {
+            background-color: #e6f7ff;
+        }
+
+        .answer-option input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        #submit-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #submit-button:hover {
+            background-color: #0056b3;
+        }
+
+        #results-container {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #007bff;
+            border-radius: 8px;
+            background-color: #e9f5ff;
+        }
+
+        /* Result Feedback Styles */
+        .correct-answer {
+            background-color: #d4edda !important; /* Green */
+            border-color: #c3e6cb !important;
+        }
+
+        .incorrect-answer {
+            background-color: #f8d7da !important; /* Red */
+            border-color: #f5c6cb !important;
+        }
+        
+        .rationale-section {
+            padding: 10px;
+            margin-top: 15px;
+            border-top: 1px dashed #ccc;
+        }
+        
+        .rationale-section h4 {
+            margin-top: 5px;
+            color: #007bff;
+        }
+        /* --- END CSS STYLES --- */
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="title">DRE Transformation Quiz</h1>
+        
+        <nav>
+            <ul id="nav-list" class="clearfix">
+                <li><a href="index.html"><h2>HOME</h2></a></li>
+                <li><a href="index.html#definition"><h2>DEFINITION</h2></a></li>
+                <li><a href="index.html#causes"><h2>CAUSES</h2></a></li>
+                <li><a href="index.html#impact"><h2>IMPACT</h2></a></li>
+                <li><a href="index.html#solution"><h2>SOLUTION</h2></a></li>
+                <li><a href="quiz.html"><h2>QUIZ</h2></a></li>
+                <li><a href="resources.html"><h2>Resources</h2></a></li>
+                <li><a href="contact.html"><h2>Contact</h2></a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div id="quiz-container">
+    <h2>DRE Transformation Fundamentals Quiz</h2>
+    <p>Test your knowledge on the economics, technology, and operations driving the Distributed Renewable Energy transition.</p>
+
+    <form id="dre-quiz-form">
+        <div class="question-card" data-q-index="0">
+            <div class="question-text">1. What is the approximate percentage decline in the Levelized Cost of Electricity (LCOE) for Solar PV observed since 2010?</div>
+            <label class="answer-option"><input type="radio" name="question-0" value="0"> 30%</label>
+            <label class="answer-option"><input type="radio" name="question-0" value="1"> 55%</label>
+            <label class="answer-option"><input type="radio" name="question-0" value="2"> 70%</label>
+            <label class="answer-option"><input type="radio" name="question-0" value="3"> 90%</label>
+        </div>
+
+        <div class="question-card" data-q-index="1">
+            <div class="question-text">2. What is the primary purpose of the IEEE Standard 1547-2018?</div>
+            <label class="answer-option"><input type="radio" name="question-1" value="0"> To define the financial incentives and tax credits for DER deployment.</label>
+            <label class="answer-option"><input type="radio" name="question-1" value="1"> To mandate the safe and functional interconnection of Distributed Energy Resources (DERs) with the electric distribution grid.</label>
+            <label class="answer-option"><input type="radio" name="question-1" value="2"> To establish the cybersecurity protocols for all utility communication networks.</label>
+            <label class="answer-option"><input type="radio" name="question-1" value="3"> To set the maximum capacity limit for any single distributed generation project.</label>
+        </div>
+
+        <div class="question-card" data-q-index="2">
+            <div class="question-text">3. Which of the following describes the key difference between a traditional Distribution Network Operator (DNO) and an emerging Distribution System Operator (DSO)?</div>
+            <label class="answer-option"><input type="radio" name="question-2" value="0"> DNOs manage low-voltage systems; DSOs manage high-voltage transmission lines.</label>
+            <label class="answer-option"><input type="radio" name="question-2" value="1"> DNOs only maintain the physical infrastructure; DSOs also actively manage and coordinate Distributed Energy Resources (DERs).</label>
+            <label class="answer-option"><input type="radio" name="question-2" value="2"> DNOs generate electricity from fossil fuels; DSOs only purchase renewable energy.</label>
+            <label class="answer-option"><input type="radio" name="question-2" value="3"> DNOs are unregulated and private; DSOs are government-owned and regulated.</label>
+        </div>
+
+        <div class="question-card" data-q-index="3">
+            <div class="question-text">4. What core function do smart inverters perform to help stabilize grid voltage during high solar production periods?</div>
+            <label class="answer-option"><input type="radio" name="question-3" value="0"> Increasing the DC power output to override fluctuations.</label>
+            <label class="answer-option"><input type="radio" name="question-3" value="1"> Disconnecting the DER system instantly upon sensing a voltage rise.</label>
+            <label class="answer-option"><input type="radio" name="question-3" value="2"> Modulating the active power output as a function of grid frequency.</label>
+            <label class="answer-option"><input type="radio" name="question-3" value="3"> Adjusting the reactive power output (Volt-VAR control) to maintain voltage levels within a specific range.</label>
+        </div>
+
+        <div class="question-card" data-q-index="4">
+            <div class="question-text">5. What is a Virtual Power Plant (VPP)?</div>
+            <label class="answer-option"><input type="radio" name="question-4" value="0"> A physical power station that exclusively uses renewable energy sources in a single location.</label>
+            <label class="answer-option"><input type="radio" name="question-4" value="1"> An aggregated network of decentralized energy resources (DERs) managed by software to operate as a single, coordinated entity.</label>
+            <label class="answer-option"><input type="radio" name="question-4" value="2"> A specialized battery storage facility used only for black-start capability.</label>
+            <label class="answer-option"><input type="radio" name="question-4" value="3"> A legal framework that allows energy consumers to sell excess electricity directly to their neighbors.</label>
+        </div>
+
+        <div class="question-card" data-q-index="5">
+            <div class="question-text">6. Which of the following is a significant role DSOs can play in the context of increasing DER penetration?</div>
+            <label class="answer-option"><input type="radio" name="question-5" value="0"> Acting as a neutral market facilitator to procure flexibility services (e.g., demand response) from grid users.</label>
+            <label class="answer-option"><input type="radio" name="question-5" value="1"> Replacing all existing gas-fired peaker plants with utility-scale solar farms.</label>
+            <label class="answer-option"><input type="radio" name="question-5" value="2"> Setting international standards for inverter interoperability and communication.</label>
+            <label class="answer-option"><input type="radio" name="question-5" value="3"> Taking over the long-distance transmission planning role from the TSO.</label>
+        </div>
+
+        <div class="question-card" data-q-index="6">
+            <div class="question-text">7. The sharp decline in solar PV costs has been primarily attributed to which economic mechanism, often referred to as Wright’s Law?</div>
+            <label class="answer-option"><input type="radio" name="question-6" value="0"> The price of the technology decreases by a fixed percentage over time, independent of production.</label>
+            <label class="answer-option"><input type="radio" name="question-6" value="1"> The cost falls consistently as the cumulative production of the technology increases.</label>
+            <label class="answer-option"><input type="radio" name="question-6" value="2"> Government subsidies and tax credits cover the majority of new installation costs.</label>
+            <label class="answer-option"><input type="radio" name="question-6" value="3"> A reduction in the price of raw materials, such as silicon and aluminum, due to market oversaturation.</label>
+        </div>
+
+        <div class="question-card" data-q-index="7">
+            <div class="question-text">8. A key benefit of Virtual Power Plants (VPPs) is their ability to provide ancillary services. What is an example of an ancillary service provided by a VPP?</div>
+            <label class="answer-option"><input type="radio" name="question-7" value="0"> Providing the physical meters and billing software for residential customers.</label>
+            <label class="answer-option"><input type="radio" name="question-7" value="1"> Enforcing the IEEE 1547 interconnection standard at the customer site.</label>
+            <label class="answer-option"><input type="radio" name="question-7" value="2"> Offering frequency regulation by rapidly adjusting aggregated generation or load in response to grid signals.</label>
+            <label class="answer-option"><input type="radio" name="question-7" value="3"> Managing the physical maintenance of all connected solar panels and batteries.</label>
+        </div>
+
+        <div class="question-card" data-q-index="8">
+            <div class="question-text">9. Under the IEEE 1547-2018 standard, what does the term 'Ride-Through Capability' refer to?</div>
+            <label class="answer-option"><input type="radio" name="question-8" value="0"> The ability of the inverter to operate without communication signals from the utility.</label>
+            <label class="answer-option"><input type="radio" name="question-8" value="1"> The ability of the DER to provide power during a full grid blackout (island operation).</label>
+            <label class="answer-option"><input type="radio" name="question-8" value="2"> The capacity to withstand and remain connected during temporary abnormal grid conditions such as voltage sags or frequency deviations.</label>
+            <label class="answer-option"><input type="radio" name="question-8" value="3"> The total energy output capacity of the inverter over its expected lifetime.</label>
+        </div>
+
+        <div class="question-card" data-q-index="9">
+            <div class="question-text">10. What is the key technological core of a Virtual Power Plant (VPP) that allows it to optimize all aggregated resources?</div>
+            <label class="answer-option"><input type="radio" name="question-9" value="0"> A massive, centralized server facility that physically hosts all the aggregated DERs.</label>
+            <label class="answer-option"><input type="radio" name="question-9" value="1"> High-performance data processing software using real-time analytics and forecasting algorithms.</label>
+            <label class="answer-option"><input type="radio" name="question-9" value="2"> A private, dedicated power line separate from the public distribution network.</label>
+            <label class="answer-option"><input type="radio" name="question-9" value="3"> Standard household smart meters installed at every customer location.</label>
+        </div>
+        
+        <button type="submit" id="submit-button">Submit Answers</button>
+    </form>
+
+    <div id="results-container" style="display:none;">
+        <h3>Quiz Results</h3>
+        <p>You scored <span id="score">0</span> out of 10.</p>
+        <p id="feedback"></p>
+        <div id="rationale-container">
+            </div>
+    </div>
+</div>
+<script>
+    // --- JAVASCRIPT LOGIC ---
+    const quizData = {
+        "questions": [
+            { "questionNumber": 1, "correctIndex": 3, "rationale": "The rapid decrease in costs, largely driven by improvements in module efficiency and manufacturing scale, is estimated to be around ninety percent since 2010." },
+            { "questionNumber": 2, "correctIndex": 1, "rationale": "The standard serves as the essential baseline requirement for any DER to connect and safely operate in parallel with the main utility grid." },
+            { "questionNumber": 3, "correctIndex": 1, "rationale": "The DSO role expands beyond asset maintenance to include real-time optimization and coordination of decentralized energy flows, a task not performed by a traditional DNO." },
+            { "questionNumber": 4, "correctIndex": 3, "rationale": "Volt-VAR control uses reactive power injection or absorption, which is the most direct and effective way for inverters to manage voltage on the distribution circuit." },
+            { "questionNumber": 5, "correctIndex": 1, "rationale": "A VPP uses advanced control systems and software to pool capacity from numerous small, decentralized sources to bid into energy markets and provide grid services." },
+            { "questionNumber": 6, "correctIndex": 0, "rationale": "Procuring flexibility allows DSOs to manage network congestion and voltage issues without expensive network reinforcement, which is a key evolving responsibility." },
+            { "questionNumber": 7, "correctIndex": 1, "rationale": "Wright's Law states that cost drops by a consistent percentage every time cumulative production doubles, making this the key driver behind the cost reduction." },
+            { "questionNumber": 8, "correctIndex": 2, "rationale": "Frequency regulation is a premium grid service where VPPs, by acting as a single dispatchable entity, can respond dynamically to stabilize system frequency." },
+            { "questionNumber": 9, "correctIndex": 2, "rationale": "Ride-through capability (VRT/FRT) is essential for high DER penetration grids, ensuring the system doesn't collapse by instantly losing all generation during minor instability." },
+            { "questionNumber": 10, "correctIndex": 1, "rationale": "The VPP's intelligence lies in its sophisticated algorithms that determine the optimal dispatch and charging/discharging schedules for all connected assets." }
+        ]
+    };
+    
+    // Function to calculate and display results
+    function showResults(event) {
+        event.preventDefault(); // Stop the form from submitting normally
+        
+        let score = 0;
+        const totalQuestions = quizData.questions.length;
+        const form = document.getElementById('dre-quiz-form');
+        const resultsContainer = document.getElementById('results-container');
+        const scoreEl = document.getElementById('score');
+        const feedbackEl = document.getElementById('feedback');
+        const rationaleContainer = document.getElementById('rationale-container');
+        const questionCards = document.querySelectorAll('.question-card');
+        
+        rationaleContainer.innerHTML = ''; // Clear previous rationale
+
+        quizData.questions.forEach((q, qIndex) => {
+            const userAnswer = form.elements[`question-${qIndex}`].value;
+            const questionCard = questionCards[qIndex];
+            const correctOptionIndex = q.correctIndex;
+
+            // Get all labels/options for this question
+            const answerOptions = questionCard.querySelectorAll('.answer-option');
+            
+            let isCorrect = false;
+
+            answerOptions.forEach((optionLabel, oIndex) => {
+                optionLabel.classList.remove('correct-answer', 'incorrect-answer');
+                
+                // Highlight the correct answer
+                if (oIndex === correctOptionIndex) {
+                    optionLabel.classList.add('correct-answer');
+                }
+                
+                // Check user's answer
+                if (oIndex.toString() === userAnswer) {
+                    if (oIndex === correctOptionIndex) {
+                        score++;
+                        isCorrect = true;
+                    } else {
+                        // User chose wrong answer, highlight it red
+                        optionLabel.classList.add('incorrect-answer');
+                    }
+                }
+            });
+
+            // Add detailed rationale to the results section
+            const rationalSection = document.createElement('div');
+            rationalSection.className = 'rationale-section';
+            rationalSection.innerHTML = `<h4>Question ${q.questionNumber} ${isCorrect ? '✅ Correct' : '❌ Incorrect'}</h4>`;
+            rationalSection.innerHTML += `<p><strong>Rationale:</strong> ${q.rationale}</p>`;
+            rationaleContainer.appendChild(rationalSection);
+
+            // Visually mark the question card based on overall result
+            questionCard.style.border = isCorrect ? '2px solid #28a745' : '2px solid #dc3545';
+        });
+
+        // Display overall results
+        scoreEl.textContent = score;
+        resultsContainer.style.display = 'block';
+        document.getElementById('submit-button').style.display = 'none';
+
+        // Set overall feedback
+        const percentage = (score / totalQuestions) * 100;
+        if (percentage === 100) {
+            feedbackEl.textContent = "Excellent! You are a DRE Transformation Expert!";
+        } else if (percentage >= 70) {
+            feedbackEl.textContent = "Great job! You have a strong grasp of the DRE fundamentals.";
+        } else {
+            feedbackEl.textContent = "Keep learning! Review the rationales and resources to improve your understanding of key concepts.";
+        }
+
+        // Scroll to results
+        resultsContainer.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Attach the event listener to the form submission
+    document.getElementById('dre-quiz-form').addEventListener('submit', showResults);
+</script>
+</body>
+<footer>
+    <p>© 2025 DRE Innovation. All rights reserved.</p>
+</footer>
+</html>
