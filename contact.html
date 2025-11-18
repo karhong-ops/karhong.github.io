@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Contact Us - DRE Innovation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">Contact Us</h1>
+        
+        <nav>
+            <ul id="nav-list" class="clearfix">
+                <li><a href="index.html"><h2>HOME</h2></a></li>
+                <li><a href="index.html#definition"><h2>DEFINITION</h2></a></li>
+                <li><a href="index.html#causes"><h2>CAUSES</h2></a></li>
+                <li><a href="index.html#impact"><h2>IMPACT</h2></a></li>
+                <li><a href="index.html#solution"><h2>SOLUTION</h2></a></li>
+                <li><a href="quiz.html"><h2>QUIZ</h2></a></li>
+                <li><a href="resources.html"><h2>Resources</h2></a></li>
+                <li><a href="contact.html"><h2>Contact</h2></a></li>
+            </ul>
+        </nav>
+    </header>
+<div class="contact-page">
+        <div class="contact-box">
+            <h1>💡 Share Your Ideas</h1>
+            <p class="contact-description">
+                Have an innovative idea or solution for Distributed Renewable Energy? 
+                We'd love to hear from you!
+            </p>
+
+            <form id="contactForm" class="simple-contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required 
+                        placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        placeholder="your.email@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="idea">Your Idea or Solution *</label>
+                    <textarea 
+                        id="idea" 
+                        name="idea" 
+                        rows="8" 
+                        required 
+                        placeholder="Tell us about your innovative idea or solution for DRE..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Submit Your Idea
+                </button>
+
+                <div id="formMessage" class="form-message"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const idea = document.getElementById('idea').value;
+            
+            // Display success message
+            const messageDiv = document.getElementById('formMessage');
+            messageDiv.innerHTML = `
+                <div class="success-alert">
+                    ✓ Thank you, ${name}! Your idea has been submitted successfully. 
+                    We'll review it and get back to you at ${email} soon.
+                </div>
+            `;
+            messageDiv.style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            
+            // Hide message after 6 seconds
+            setTimeout(() => {
+                messageDiv.style.display = 'none';
+            }, 6000);
+            
+            // Log the submission (in a real app, you'd send this to a server)
+            console.log('New submission:', { name, email, idea });
+        });
+    </script>
+</body>
+<footer>
+    <p>© 2025 DRE Innovation. All rights reserved.</p>
+</footer>
+</html>
